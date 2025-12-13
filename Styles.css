@@ -1,0 +1,81 @@
+
+body{
+    margin: 0;
+}
+
+.Marco{
+    border: 2px solid black;
+}
+.HeaderContainer{
+    width: 100%;
+    background-color: rgb(177, 176, 176);
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+        .HeaderLogoContainer{
+            height: 90%;
+            width: 15vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0.2vh;
+            
+            border: 2px solid black;
+
+
+            
+            
+        }
+                .HeaderTitle{
+                    margin: 0;
+                    
+                }               
+                        #Vina{
+                            font-family: "DM Serif Display", serif;
+                            font-weight: 400;
+                            font-style: normal;
+                            color: rgb(61, 60, 60);
+                        }
+                        #And{
+                            font-family: "DM Serif Display", serif;
+                            font-weight: 200;
+                            font-style: normal;
+                            color:rgb(112, 8, 13);
+                            margin-top: -0.5vh;
+                        }
+                        #Salvatores{
+                            font-family: "Great Vibes", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                            color: green;
+                        }
+        .HeaderNavigationContainer{
+            height: 90%;
+            width: auto;
+            display: flex;
+            align-items: center;
+            margin-left: -0vh;
+            border: 2px solid black;
+            
+        }               
+                .HeaderNavigationText{
+                    margin: 1vh;
+                    color: black;
+                    text-decoration: none;
+                    font-family: "DM Serif Display", serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 2vh;
+                    margin-bottom: -5vh;
+                    
+                }
+        .HeaderSocialsContainer{
+            color: aqua;
+            border: 2px solid black;
+            
+        }
+                .HeaderSocialsImage{
+                    width: 3vh;
+                }
