@@ -1,4 +1,11 @@
 
+:root {
+    --primario: #785d56; 
+    --secundario: #be4c54; 
+    --random1: #c6b299 ; 
+    --random2: #e6d5c1;
+    --random3: #fff4e3; 
+  }
 body{
     margin: 0;
 }
@@ -8,11 +15,13 @@ body{
 }
 .HeaderContainer{
     width: 100%;
-    background-color: rgb(177, 176, 176);
+    background-color: var(--random3);
     height: 15vh;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
         .HeaderLogoContainer{
             height: 90%;
@@ -21,9 +30,8 @@ body{
             flex-direction: column;
             align-items: center;
             margin: 0.2vh;
+            margin-left: 10vh;
             
-            border: 2px solid black;
-
 
             
             
@@ -56,8 +64,8 @@ body{
             width: auto;
             display: flex;
             align-items: center;
-            margin-left: -0vh;
-            border: 2px solid black;
+            margin-left: 5vh;
+            
             
         }               
                 .HeaderNavigationText{
@@ -68,14 +76,59 @@ body{
                     font-weight: 400;
                     font-style: normal;
                     font-size: 2vh;
-                    margin-bottom: -5vh;
+                    
                     
                 }
         .HeaderSocialsContainer{
             color: aqua;
-            border: 2px solid black;
+            
+            margin-left: 70vh;
             
         }
                 .HeaderSocialsImage{
                     width: 3vh;
+                    margin-bottom: -1vh;
+                    margin-inline: 2vh;
                 }
+.Hero{
+ width: 100%;
+    background-color: #785d56;
+    position: relative;
+}
+        .HeroImage{
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            
+        }
+
+        .HeroText{
+                    /* Saca el texto del flujo normal y lo posiciona en relación con .hero */
+            position: absolute; 
+            
+            /* Centrado horizontal y vertical (método común con transform) */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            /* Estilos de presentación */
+            color: white; /* Color del texto para que contraste con la imagen */
+            text-align: center;
+            padding: 20px;
+            /* Un pequeño fondo semitransparente ayuda a la legibilidad */
+            background-color: rgba(0, 0, 0, 0.4); 
+            border-radius: 8px;
+            font-size: 5vh;
+        }
+.Main{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+        .MainText{
+            margin-inline: 25vh;        
+        }
