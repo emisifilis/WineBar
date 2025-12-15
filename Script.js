@@ -20,15 +20,15 @@ function handleScrollDirection() {
     
     if(currentScrollTop < VHaPX){
         headerContainer.classList.remove("scrolled");
-        imageElement1.src = "/ASSETS/image (1).webp"
-        imageElement2.src = "/ASSETS/image (2).webp"
-        imageElement3.src = "/ASSETS/image (3).webp"
+        imageElement1.src = "ASSETS/image (1).webp"
+        imageElement2.src = "ASSETS/image (2).webp"
+        imageElement3.src = "ASSETS/image (3).webp"
         
     }else{
         headerContainer.classList.add("scrolled");
-        imageElement1.src = "/ASSETS/facebook-app-symbol.png"
-        imageElement2.src = "/ASSETS/instagramicon.png"
-        imageElement3.src = "/ASSETS/triptri.png"
+        imageElement1.src = "ASSETS/facebook-app-symbol.png"
+        imageElement2.src = "ASSETS/instagramicon.png"
+        imageElement3.src = "ASSETS/triptri.png"
     }
     
     
