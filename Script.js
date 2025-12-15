@@ -1,22 +1,39 @@
-window.onscroll = function() {scrollFunction()};
-let VH = 20;
-function scrollFunction() {
-    const headerContainer = document.getElementsByClassName("HeaderContainer")[0];
-    const headerTitles = document.getElementsByClassName("HeaderTitle");
-    const VHaPX = window.innerHeight * (VH / 100);
 
-    if (document.body.scrollTop >  VHaPX|| document.documentElement.scrollTop > VHaPX) {
+let lastScrollTop = 0; 
+
+const SCROLL_SENSITIVITY = 5; 
+
+window.onscroll = function() {
+    handleScrollDirection();
+};
+
+function handleScrollDirection() {
+    const headerContainer = document.getElementsByClassName("HeaderContainer")[0];
+    const VHaPX = window.innerHeight * (4 / 100);
+    
+    
+    const currentScrollTop = document.documentElement.scrollTop;
+
+    
+    if (currentScrollTop < VHaPX) {
+        headerContainer.classList.remove("scrolled");
+        lastScrollTop = currentScrollTop;
+        return; 
+    }
+
+    
+    if (currentScrollTop > lastScrollTop + SCROLL_SENSITIVITY) {
+        
         
         headerContainer.classList.add("scrolled");
         
-        for (let i = 0; i < headerTitles.length; i++) {
-            headerTitles[i].style.fontSize = "2vh"; 
-        }
-    } else {
+    } else if (currentScrollTop < lastScrollTop - SCROLL_SENSITIVITY) {
+        
         
         headerContainer.classList.remove("scrolled");
-        for (let i = 0; i < headerTitles.length; i++) {
-            headerTitles[i].style.fontSize = "3.3vh"; 
-        }
+        
     }
+
+    
+    lastScrollTop = currentScrollTop;
 }
