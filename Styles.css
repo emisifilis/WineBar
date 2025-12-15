@@ -1,13 +1,22 @@
 
 :root {
-    --primario: #785d56; 
-    --secundario: #be4c54; 
-    --random1: #c6b299 ; 
-    --random2: #e6d5c1;
-    --random3: #fff4e3; 
+    
+    --wine: rgb(111, 42, 54);
+    --wine-light:rgb(155, 75, 89);
+    --wine-dark:rgb(77, 26, 34);
+    --cream:rgb(244, 240, 231);
+    --cream-light:rgb(251, 248, 243);
+    --gold:rgb(204, 163, 51);
+    --gold-light:rgb(214, 186, 113);
+    --terracota:rgb(166, 99, 63);
+    --olive:rgb(100, 111, 67);
+    --background:rgb(248, 245, 239);
+    --foreground:rgb(44, 39, 33);
+    --muted-foreground:rgb(103, 92, 76);
   }
 body{
     margin: 0;
+    background-color: var(--cream-light);
 }
 
 .Marco{
@@ -28,7 +37,7 @@ body{
 .HeaderContainer.scrolled {
     height: 7.5vh; 
     opacity: 0.9; 
-    background-color: var(--random3); 
+    background-color: var(--cream); 
     
 }       
         .HeaderLogoContainer{
@@ -171,27 +180,191 @@ body{
                         #HeroSalvatores{
                             color: aliceblue;
                         }
-                .HeroTextText{
-                    
-                }
+
+/*main starts hereeee*/          
 .Main{
     
     display: flex;
     justify-content: center;
     align-items: center;
     
+    height: 80vh;
     padding: 5vh;
 }
         .MainText{
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 5vh;  
-        }
         
-                .MainImageImage{
-                    width: 100%;
+        flex-direction: column;
+        
+        padding-left: 10vh;
+        padding-right: 20vh;
+        width: 50%;
+        
+        }
+                .MainSubtitle{
+                    
+                    font-size: 2.5vh;
+                    text-align: left;
+                    color: var(--wine-light);
+                    font-family: "Great Vibes", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                            font-size: 3vh;
+                }
+                .MainTitle{
+                    
+                    font-size: 3vh;
+                    color: var(--foreground);
+                    margin-top: -7vh;
+
+                }
+                .MainTextText{
+                    
+                    font-size: 2vh;
+                    color: var(--muted-foreground);
+                }
+                
+               
+        .MainImage{
+            padding-inline: 5vh;
+            width: 50%;
             
-                object-fit: cover;
+            height: 80%;
+
+        }
+                .MainImageImage{
+                    width: 100%; 
+                    height: 100%;
+                    object-fit: cover;
+                    border: 2vh solid var(--cream); 
+                    border-radius: 2vh;
+                    
+            
+                }
+        .MainLittleThingys{
+            display: flex;
+            
+            align-items: center;
+            
+        }
+                .MainLittleThingy{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    padding-right: 2vh;
+                    
+                    color: var(--wine);
+                }
+                .MainLittleThingy h2{
+                    
+                    margin-bottom: -1vh;
+                    font-size: 4vh;
+                    text-align: center;
+                    
+                }
+                .MainLittleThingy p{
+                    
+                    font-size: 2vh;
+                }
+.Menu{
+    height: 80vh;
+    width: 100%;
+}
+        .MenuText{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+                .MenuText h2{
+                    color: var(--gold);
+                    font-family: "Great Vibes", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                            font-size: 3.5vh;
+                            margin: 0;
+
+                }
+                .MenuText h1{
+                    margin: 0;
+                    color: --fore;
+                    font-family: "Cormorant Garamond", serif;
+                                    font-optical-sizing: auto;
+                                    font-weight: 500;
+                                    font-style: normal;
+                    font-size: 5vh;
+                }
+                .MenuText p{
+                    color: var(--muted-foreground);
+                    font-size: 2vh;
+                }
+        .MenuContent{
+            display: flex;
+            padding-inline: 3VH;
+            flex-direction: row;
+            
+            
+        }
+                .MenuContainers{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 50%;
+                    gap: 2vh;
+                    
+                    justify-content: center;
+                }
+                        .MenuContainer{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;white-space: ;
+                            border: 2px solid rgb(225, 215, 215);
+                            width: 40%;
+                            min-height: 20vh;
+                            aspect-ratio: 1 / 1;
+                            border-radius: 1.5vh;
+                            padding-inline: 1vh;
+                            background-color: var(--cream);
+                        }
+                                .MenuContainer h2{
+                                    margin: 0;
+                                    margin-block: 0.5vh;
+                                    
+                                }
+                                .MenuContainer p{
+                                    font-size: 1.5vh;
+                                    margin: 0;
+                                    margin-block: 0.5vh;
+                                    color: var(--muted-foreground);
+                                    
+                                }
+                                .MenuContainer h2:first-of-type{
+                                    font-family: "Cormorant Garamond", serif;
+                                    font-optical-sizing: auto;
+                                    font-weight: 500;
+                                    font-style: normal;
+                                }
+                                .MenuContainer h2:last-of-type{
+                                    color: var(--wine);
+                                }
+                                .MenuContainerImage{
+                                    max-width: 20%;
+                                    max-height: 20%;
+                                    margin: 0;
+                                    object-fit: contain;
+
+                                }
+        .MenuImage{
+            padding-inline: 5vh;
+            width: 50%;
+            
+            height: auto;
+        }
+                .MenuImageImage{
+                    width: 100%; 
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 2vh;
+                    
+                    
                 }
