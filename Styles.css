@@ -18,7 +18,9 @@ body{
     margin: 0;
     background-color: var(--cream-light);
 }
-
+a{
+    text-decoration: none;
+}
 .Marco{
     border: 2px solid black;
 }
@@ -38,6 +40,8 @@ body{
     height: 7.5vh; 
     opacity: 0.9; 
     background-color: var(--cream); 
+    
+ 
     
 }       
         .HeaderLogoContainer{
@@ -138,7 +142,7 @@ body{
                 }
 .Hero{
  width: 100%;
-    background-color: #785d56;
+    
     position: relative;
 }
         .HeroImage{
@@ -274,7 +278,7 @@ body{
     height: 92vh;
     width: 100%;
     margin-bottom: 5vh;
-    border: 2px solid black;
+    
 }
         .MenuText{
             width: 100%;
@@ -334,10 +338,11 @@ body{
                                 .MenuContainer h2{
                                     margin: 0;
                                     margin-block: 0.5vh;
+                                    font-size: 3vh;
                                     
                                 }
                                 .MenuContainer p{
-                                    font-size: 1.5vh;
+                                    font-size: 2vh;
                                     margin: 0;
                                     margin-block: 0.5vh;
                                     color: var(--muted-foreground);
@@ -357,6 +362,7 @@ body{
                                     max-height: 20%;
                                     margin: 0;
                                     object-fit: contain;
+                                    padding-bottom: 2vh;
 
                                 }
         .MenuImage{
@@ -374,7 +380,7 @@ body{
                     
                 }
 .Visit{
-    border: 2px solid black;
+   
     height: 80vh;
     display: flex;
     margin-inline: 6vh;
@@ -385,13 +391,14 @@ body{
             
             width: 50%;
             height: auto;
-            border: 2px solid black;
+            
             text-align: left;
         }
                 .VisitText{
-                    
+                    padding-left: 4vh;
                 }
                         .VisitInformation h2{
+                            color: var(--wine-light);
                             font-family: "Great Vibes", cursive;
                                     font-weight: 400;
                                     font-style: normal;
@@ -416,30 +423,57 @@ body{
 
 
                 .VisitDataContainers{
-                    height: auto;
-                    width: 50%;
-                    border: 2px solid black;
+                    
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 2vh;
+                    
+                    justify-content: space-around;
+                    
+                    
+                    
                 }
 
                         .VisitDataContainer{
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
-                            border: 2px solid rgb(225, 215, 215);
-                            width: 40%;
-                            min-height: 20vh;
+                            
+                            width: 30%;
+                            min-height: 15vh;
                             aspect-ratio: 1 / 1;
                             border-radius: 1.5vh;
                             padding-inline: 1vh;
-                            background-color: var(--cream);
+                            
+                            
+                            
                         }
                                 .VisitDataContainerImage{
-                                    max-width: 20%;
-                                    max-height: 20%;
-                                    margin: 0;
+                                    max-width: 40%;
+                                    max-height: 100%;
                                     object-fit: contain;
                                 }
+                                        .VisitDataContainerImage img{
+                                            max-width: 50%;
+                                            object-fit: contain;
+                                        }
                         
         .VisitGoogleMaps{
             width: 50%;
-        }
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }       
+                .GoogleMap{
+                    width: 90%;
+                    border-radius: 6%;
+                    height: 90%;
+                    
+                    
+                }
+                .GoogleMap:hover{
+                    
+                    
+                }
