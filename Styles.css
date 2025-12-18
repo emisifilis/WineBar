@@ -1,4 +1,23 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Corta cualquier cosa que intente salirse horizontalmente */
+}
+html {
+    scroll-behavior: smooth;
+}
+.Main, .Menu, .Visit {
+    /* Ajusta este valor según la altura de tu Header. 
+       Si tu header mide 15vh, ponle un poco más para que respire */
+    scroll-margin-top: 15vh; 
+}
 
+/* En móvil el header es más pequeño (10vh), 
+   podemos ajustarlo dentro de tu @media */
+@media only screen and (max-width: 768px) {
+    .Main, .Menu, .Visit {
+        scroll-margin-top: 11vh;
+    }
+}
 :root {
     
     --wine: rgb(111, 42, 54);
@@ -524,7 +543,7 @@ a{
     /* 1. Ajustes del Header Móvil */
     .HeaderContainer {
         height: 10vh;
-        background-color: var(--cream); /* Fondo sólido para leer mejor */
+        background-color: transparent;
     }
     .HeaderContainer.scrolled {
         height: 10vh;
@@ -652,11 +671,16 @@ a{
         height: auto; /* Quitar altura fija */
     }
     .MenuText {
-        padding: 2vh;
-        text-align: center;
+       
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
     .MenuText p{
-        padding-right: 5vh;
+        padding-right: 0;
+        max-width: 85%;   
+        margin: 1vh;
     }
     .MenuContainers {
         gap: 1vh;
@@ -693,6 +717,7 @@ a{
         justify-content: center;
     }
     .VisitDataContainers {
+        margin-top: 5vh;
         display: flex;
         flex-direction: column; /* Una sola columna */
         align-items: center;    /* Centra los elementos hijos */
@@ -716,5 +741,17 @@ a{
         height: auto;
         padding: 5vh 0;
     }
+    .FooterTitle h1 {
+        font-size: 2.5rem !important; /* Título de la marca más grande */
+    }
     
-}}
+    .FooterText p {
+        font-size: 1.8rem !important; /* El eslogan "Where every glass..." */
+        text-align: center;
+        padding: 0 2vh;
+    }
+    
+    .FooterSocials .HeaderSocialsImage {
+        width: 5vh; /* Iconos de redes sociales más grandes para tocarlos fácil */
+    }
+}
