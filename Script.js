@@ -33,3 +33,22 @@ function handleScrollDirection() {
     
     
 }
+// Script.js
+
+// 1. Seleccionamos los elementos del DOM
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".HeaderNavigationContainer");
+
+// 2. Agregamos el evento 'click' al icono hamburguesa
+hamburger.addEventListener("click", () => {
+    // Alternar la clase 'active' en el botón (para la animación de X)
+    hamburger.classList.toggle("active");
+    // Alternar la clase 'active' en el menú (para que baje/aparezca)
+    navMenu.classList.toggle("active");
+});
+
+// 3. (Opcional) Cerrar el menú cuando se hace clic en un enlace
+document.querySelectorAll(".HeaderNavigationText").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));

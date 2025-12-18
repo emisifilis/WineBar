@@ -24,17 +24,19 @@ a{
 .Marco{
     border: 2px solid black;
 }
-.HeaderContainer{
+.HeaderContainer {
     width: 100%;
-    background-color: var(--random3);
     height: 15vh;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Esto separa los elementos automáticamente */
     position: fixed;
     top: 0;
     z-index: 1000;
     transition: all 0.7s ease;
     background-color: transparent;
+    padding: 0 2vw; /* Un poco de espacio a los lados */
+    box-sizing: border-box; /* Para que el padding no rompa el ancho */
 }
 .HeaderContainer.scrolled {
     height: 7.5vh; 
@@ -43,15 +45,34 @@ a{
     
  
     
-}       
+}
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--foreground); /* Color de las rayitas */
+        }
+
+        /* Ocultar los iconos sociales móviles en escritorio */
+        .HeaderSocialsContainerMobile {
+            display: none; 
+        }    
         .HeaderLogoContainer{
             height: 90%;
-            width: 15vh;
+            width: auto; /* Ancho automático */
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0.2vh;
-            margin-left: 10vh;
+            justify-content: center;
+            margin: 0; 
             transition: all 0.3s ease;
 
             
@@ -99,10 +120,9 @@ a{
                         }
         .HeaderNavigationContainer{
             height: 90%;
-            width: auto;
             display: flex;
             align-items: center;
-            margin-left: 5vh;
+            margin: 0; /* Sin márgenes forzados */
             
             
         }               
@@ -127,9 +147,9 @@ a{
                     font-size: 2vh;
                 }
         .HeaderSocialsContainer{
-            color: aqua;
-            
-            margin-left: 70vh;
+            margin: 0; /* Sin márgenes forzados */
+            display: flex;
+            align-items: center;
             
         }
                 .HeaderSocialsLinks{
@@ -477,3 +497,202 @@ a{
                     
                     
                 }
+.Footer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    background-color: var(--wine);
+}
+        .Footer p{
+            font-family: "Great Vibes", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                            color: var(--gold);
+                            font-size: 5vh;
+        }
+        .Footer div{
+            padding-block: 2vh;
+        }
+
+
+/* --- INICIO DE CÓDIGO RESPONSIVO (MÓVIL) --- */
+@media only screen and (max-width: 768px) {
+
+    /* 1. Ajustes del Header Móvil */
+    .HeaderContainer {
+        height: 10vh;
+        background-color: var(--cream); /* Fondo sólido para leer mejor */
+    }
+    .HeaderContainer.scrolled {
+        height: 10vh;
+    }
+    .hamburger {
+        display: block;
+        z-index: 2000; /* Asegura que esté encima de todo */
+        margin-right: 20px;
+    }
+
+    /* Animación del botón a una "X" cuando está activo */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: white; /* Cambia a blanco al abrir */
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: white;
+    }
+
+    /* Ocultar los iconos sociales de escritorio */
+    .desktop-only {
+        display: none;
+    }
+
+    /* ESTILO DEL MENÚ DESPLEGABLE */
+    .HeaderNavigationContainer {
+        position: fixed;
+        left: -100%; /* Empieza escondido a la izquierda */
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--wine); /* Fondo color Vino */
+        width: 100%;
+        height: 100vh; /* Pantalla completa */
+        text-align: center;
+        transition: 0.3s; /* Velocidad de la animación */
+        z-index: 1500;
+        justify-content: center; /* Centrar verticalmente */
+        margin: 0;
+    }
+
+    /* Clase que agrega JS para mostrar el menú */
+    .HeaderNavigationContainer.active {
+        left: 0; /* Se desliza a la vista */
+    }
+
+    /* Estilo de los enlaces dentro del menú móvil */
+    .HeaderNavigationText {
+        margin: 16px 0;
+        font-size: 2rem !important; /* Texto grande */
+        color: white !important;
+    }
+
+    /* Mostrar iconos sociales dentro del menú móvil */
+    .HeaderSocialsContainerMobile {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    
+    .HeaderTitle {
+        font-size: 1.5rem; /* Usamos rem en vez de vh para que sea legible */
+    }
+    #Vina, #And, #Salvatores {
+        font-size: 1.2rem !important; /* Forzamos tamaño legible */
+    }
+
+    /* 2. Hero Section (Portada) */
+    .HeroText {
+        width: 90%;
+        font-size: 3vh; /* Ajuste para que no sea gigante */
+    }
+
+    /* 3. Secciones Principales: Cambiar de Fila a Columna */
+    .Main, .MenuContent, .Visit {
+        flex-direction: column; /* Apila los elementos uno sobre otro */
+        height: auto; /* Permite que la sección crezca según el contenido */
+        padding: 5vh 2vh;
+        margin: 0;
+    }
+
+    /* 4. Ajuste de Anchos (De 50% a 100%) */
+    .MainText, .MainImage, .MenuContainers, .MenuImage, .VisitInformation, .VisitGoogleMaps {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 3vh;
+    }
+
+    /* 5. Ajustes de la sección "Nuestra Historia" */
+    .Main {
+        /* Invertir orden: Imagen arriba, texto abajo */
+        flex-direction: column-reverse; 
+        justify-content: center;
+    }
+    .MainImageImage {
+        height: 40vh; /* Altura controlada para la imagen */
+        margin-right: 3vh;
+    }
+    .MainTitle h1 {
+        font-size: 2.5rem;
+        margin-bottom: 3vh;
+    }
+    .MainLittleThingys{
+        display: flex;
+        justify-content: center;
+    }
+    /* 6. Ajustes del Menú */
+    .Menu {
+        height: auto; /* Quitar altura fija */
+    }
+    .MenuText {
+        padding: 2vh;
+        text-align: center;
+    }
+    .MenuText p{
+        padding-right: 5vh;
+    }
+    .MenuContainers {
+        gap: 1vh;
+    }
+    .MenuContainer {
+        width: 100%; /* Cada tarjeta ocupa todo el ancho */
+        margin-bottom: 2vh;
+        aspect-ratio: auto; /* Quitar proporción cuadrada forzada */
+        padding: 3vh 1vh;
+        display: flex;
+        justify-content: center;
+    }
+    .MenuImage {
+        display: none; /* Opcional: Ocultar la foto grande del menú en cel para ahorrar espacio */
+    }
+
+    /* 7. Ajustes de Contacto y Mapa */
+    .Visit {
+        margin-inline: 0;
+        flex-direction: column-reverse; /* Mapa abajo, info arriba */
+    }
+    .VisitGoogleMaps {
+        height: 40vh; /* Altura fija para el mapa en celular */
+    }
+    .VisitDataContainer {
+        width: 45%; /* Dos columnas para los datos de contacto */
+        min-height: auto;
+        margin-bottom: 1vh;
+    }
+    .VisitDataContainers {
+        gap: 10px;
+        justify-content: space-between;
+    }
+    .VisitInformation h1 {
+        font-size: 2.5rem;
+    }
+
+    /* 8. Ajustes de Texto Generales */
+    p {
+        font-size: 1rem !important; /* Texto legible estándar */
+        line-height: 1.5;
+    }
+    h1, h2 {
+        line-height: 1.2;
+    }
+    
+    .Footer {
+        height: auto;
+        padding: 5vh 0;
+    }
+}
